@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: call-compass-api
+    runtime: python
+    plan: free
+    buildCommand: python -m compileall -q backend
+    startCommand: python backend/server.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.1-flash-lite
+      - key: ALLOWED_ORIGINS
+        sync: false
