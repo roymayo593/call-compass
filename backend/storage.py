@@ -23,7 +23,7 @@ class SupabaseStore:
             raise StoreError('Database is not configured')
         req = Request(self.url + '/rest/v1/' + path,
                       data=json.dumps(payload).encode() if payload is not None else None,
-                      headers={'apikey': self.key, 'Authorization': 'Bearer ' + self.key,
+                      headers={'apikey': self.key, **({'Authorization': 'Bearer ' + self.key} if self.key.startswith('eyJ') else {}),
                                'Content-Type': 'application/json', 'Prefer': 'return=representation'}, method=method)
         try:
             with urlopen(req, timeout=20) as res:
