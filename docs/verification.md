@@ -23,4 +23,16 @@ Verified in the in-app browser: creating a sample call, reload restoring the act
 
 The test used synthetic data only. No supplied transcript was sent to Gemini.
 
-The complete Vercel → Render → Supabase frontend flow remains pending the Vercel GitHub import.
+## Public browser end-to-end check
+
+https://call-compass-iota.vercel.app — passed on 13 November 2026.
+
+- A sample call was started through the public Vercel frontend and Render backend.
+- Each of the eight stages was selected and saved in order.
+- A synthetic English/Hindi need was entered at stage 5. Reloading restored both its exact words and the selected result before continuing.
+- The call was finished as information-only with a recorded email follow-up.
+- The saved record showed stage 8 reached and all eight individual results, including the unchanged need.
+- The Gemini button generated a real summary that explicitly said no meeting or callback had been agreed.
+- Render's origin allowlist was updated to the exact production Vercel origin. No wildcard origin or browser API key was used.
+
+Only the applicant's own video and final application/WhatsApp steps remain. The software build is complete.

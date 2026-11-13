@@ -4,7 +4,7 @@ An eight-stage guide a caller can keep beside a cold call. Built for DeepThought
 
 ## Live links
 
-- Frontend: Vercel import in progress.
+- App: https://call-compass-iota.vercel.app
 - Backend: https://call-compass-api.onrender.com
 - Health: https://call-compass-api.onrender.com/health
 
@@ -76,4 +76,4 @@ Provider: Google Gemini, model `gemini-3.1-flash-lite` (configurable on Render).
 
 ## Verification
 
-Automated backend tests cover workspace isolation, retry behavior, distinct stage preservation, exact multilingual words, early close, post-close edits, validation, CORS, and graceful missing-AI behavior. The deployed Render → Supabase → Gemini smoke test also passed: all eight stages persisted, retries did not duplicate the call, another workspace could not read it, the finished record was readable, and Gemini returned a factual information-only handover. Full frontend deployment verification is pending. See `docs/verification.md`.
+Automated backend tests cover workspace isolation, retry behavior, distinct stage preservation, exact multilingual words, early close, post-close edits, validation, CORS, and graceful missing-AI behavior. The deployed Render → Supabase → Gemini smoke test also passed: all eight stages persisted, retries did not duplicate the call, another workspace could not read it, the finished record was readable, and Gemini returned a factual information-only handover. The public Vercel frontend also passed the complete browser flow: all eight stages, exact bilingual notes surviving refresh, finish, history, and a real Gemini handover. See `docs/verification.md`.
